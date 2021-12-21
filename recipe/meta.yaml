@@ -1,5 +1,5 @@
 {% set name = "skll" %}
-{% set version = "2.5" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,12 @@ package:
 
 source:
   url: https://github.com/EducationalTestingService/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5d690556a72a729b4039d50010ddf7470c68d97505e8b6b6f1a5cc29d2b0ae01
+  sha256: e3b5114d7ea10d33c9c62218043a4d7eaa23eb6ac91947868d0dd487b86b0f32
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - compute_eval_from_predictions = skll.utils.commandline.compute_eval_from_predictions:main
     - filter_features = skll.utils.commandline.filter_features:main
@@ -26,7 +25,7 @@ build:
     - summarize_results = skll.utils.commandline.summarize_results:main
 
 requirements:
-  build:
+  host:
     - python >=3.6
     - pip
     - setuptools
