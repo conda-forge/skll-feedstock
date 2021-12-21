@@ -1,5 +1,5 @@
 {% set name = "skll" %}
-{% set version = "2.5" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,12 @@ package:
 
 source:
   url: https://github.com/EducationalTestingService/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5d690556a72a729b4039d50010ddf7470c68d97505e8b6b6f1a5cc29d2b0ae01
+  sha256: e3b5114d7ea10d33c9c62218043a4d7eaa23eb6ac91947868d0dd487b86b0f32
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - compute_eval_from_predictions = skll.utils.commandline.compute_eval_from_predictions:main
     - filter_features = skll.utils.commandline.filter_features:main
@@ -24,20 +23,29 @@ build:
     - run_experiment = skll.utils.commandline.run_experiment:main
     - skll_convert = skll.utils.commandline.skll_convert:main
     - summarize_results = skll.utils.commandline.summarize_results:main
-
+    - compute_eval_from_predictions = skll.utils.commandline.compute_eval_from_predictions:main
+    - filter_features = skll.utils.commandline.filter_features:main
+    - generate_predictions = skll.utils.commandline.generate_predictions:main
+    - join_features = skll.utils.commandline.join_features:main
+    - plot_learning_curves = skll.utils.commandline.plot_learning_curves:main
+    - print_model_weights = skll.utils.commandline.print_model_weights:main
+    - run_experiment = skll.utils.commandline.run_experiment:main
+    - skll_convert = skll.utils.commandline.skll_convert:main
+    - summarize_results = skll.utils.commandline.summarize_results:main
+    
 requirements:
-  build:
-    - python >=3.6
+  host:
+    - python >=3.8
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >=3.8
     - beautifulsoup4
     - joblib
     - numpy
     - pandas
     - ruamel.yaml
-    - scikit-learn >=0.24.1,<=0.24.2
+    - scikit-learn >=1.0.1,<=1.0.2
     - scipy
     - seaborn
     - tabulate
@@ -67,3 +75,7 @@ about:
 extra:
   recipe-maintainers:
     - ngam
+    - desilinguist
+    - mulhod
+    - Frost45
+   

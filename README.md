@@ -116,5 +116,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Frost45](https://github.com/Frost45/)
+* [@desilinguist](https://github.com/desilinguist/)
+* [@mulhod](https://github.com/mulhod/)
 * [@ngam](https://github.com/ngam/)
 
