@@ -1,5 +1,5 @@
 {% set name = "skll" %}
-{% set version = "3.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/EducationalTestingService/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e3b5114d7ea10d33c9c62218043a4d7eaa23eb6ac91947868d0dd487b86b0f32
+  sha256: 56db6b05c916eea7c2154dcfaf5033e46f99441019a27f7d0a5335132c730590
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ build:
     - run_experiment = skll.utils.commandline.run_experiment:main
     - skll_convert = skll.utils.commandline.skll_convert:main
     - summarize_results = skll.utils.commandline.summarize_results:main
-    
+
 requirements:
   host:
     - python >=3.8
@@ -45,7 +45,7 @@ requirements:
     - numpy
     - pandas
     - ruamel.yaml
-    - scikit-learn >=1.0.1,<=1.0.2
+    - scikit-learn >=1.1.0
     - scipy
     - seaborn
     - tabulate
@@ -78,4 +78,3 @@ extra:
     - desilinguist
     - mulhod
     - Frost45
-   
