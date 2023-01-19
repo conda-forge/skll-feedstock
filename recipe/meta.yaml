@@ -1,5 +1,5 @@
 {% set name = "skll" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/EducationalTestingService/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 56db6b05c916eea7c2154dcfaf5033e46f99441019a27f7d0a5335132c730590
+  sha256: 69d623985e30836f290c4963cd090db7ac6e49f45117d4eb8ccb7acad35b51d4
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - compute_eval_from_predictions = skll.utils.commandline.compute_eval_from_predictions:main
