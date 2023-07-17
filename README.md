@@ -1,11 +1,11 @@
-About skll
-==========
+About skll-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/skll-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/EducationalTestingService/skll
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/skll-feedstock/blob/main/LICENSE.txt)
 
 Summary: SciKit-Learn Laboratory makes it easier to run machine learning experiments with scikit-learn.
 
