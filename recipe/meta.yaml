@@ -1,5 +1,5 @@
 {% set name = "skll" %}
-{% set version = "5.0.0" %}
+{% set version = "5.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/EducationalTestingService/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2a0a01c00bc586cc8b5684dff0a85439e11e483cd1602d1669657ed44e99af08
+  sha256: 1781c526efb6dd9f97fe64fb3a7167187772e561b7ece433c06ac3f39d666277
 
 build:
   noarch: python
