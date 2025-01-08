@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "skll" %}
 {% set version = "5.1.0" %}
 
@@ -11,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - compute_eval_from_predictions = skll.utils.commandline.compute_eval_from_predictions:main
@@ -26,11 +27,11 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - beautifulsoup4
     - joblib
     - numpy
@@ -45,6 +46,8 @@ requirements:
 
 test:
   # Python imports
+  requires:
+    - python {{ python_min }}
   imports:
     - skll
 
